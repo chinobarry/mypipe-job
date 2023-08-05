@@ -2,24 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage("build") {
-            steps {
-                echo 'building my application...'
+        stages('Git Checkout'){
+            steps{
+           
+	      script{    
+	           git branch: 'main', url 'https://github.com/chinobarry/Git-checkout.git'
 
-            }
-
-        }
-
-
-        stage("test") {
-            steps {
-                echo 'testing my application...'
-            }
-        }
-
-        stage("deploy") {
-            steps {
-                echo 'deploying my application...'
 
             }
 
